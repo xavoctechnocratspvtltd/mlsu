@@ -6,17 +6,17 @@ namespace xepan\mlsu;
 /**
 * 
 */
-class Model_Category extends \xepan\base\Model_Table{
+class Model_Program extends \xepan\base\Model_Table{
 	
-	public $table = "mlsu_category";
-	
+	public $table = "mlsu_program";
 	public $status=['Active','InActive'];
+
 	public $actions=[
 		'Active'=>['view','edit','delete','deactivate'],
 		'InActive'=>['view','edit','delete','activate']
 	];
 
-	public $acl_type='Document_Category';
+	public $acl_type='MLSU_Program';
 
 	function init(){
 		parent::init();
@@ -26,6 +26,7 @@ class Model_Category extends \xepan\base\Model_Table{
 		$this->addField('status')->enum(['Active','InActive'])->defaultValue('Active');
 		$this->addField('created_at')->type('datetime')->defaultValue($this->app->now);
 
-		$this->hasMany('xepan\mlsu\DocumentCategoryAssociation','category_id');
+		$this->hasMany('xepan\mlsu\Faculty','program_id');
+		$this->hasMany('xepan\mlsu\Course','program_id');
 	}
 }
