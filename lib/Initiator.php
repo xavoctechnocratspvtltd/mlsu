@@ -12,6 +12,7 @@ class Initiator extends \Controller_Addon {
         ->setBaseURL('../vendor/xepan/mlsu/');
 
         $m = $this->app->top_menu->addMenu('MLSU');
+        $m->addItem(['Top Menus','icon'=>'fa fa-check-square-o'],'xepan_mlsu_menus');
         $m->addItem(['Program/Faculty/Course','icon'=>'fa fa-check-square-o'],'xepan_mlsu_programcourses');
         $m->addItem(['Document Catgory','icon'=>'fa fa-check-square-o'],'xepan_mlsu_documentcategories');
         $m->addItem(['Documents','icon'=>'fa fa-check-square-o'],'xepan_mlsu_documents');

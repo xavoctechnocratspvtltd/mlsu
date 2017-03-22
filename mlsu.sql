@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 03/22/2017 22:26:25 PM
+ Date: 03/22/2017 22:56:53 PM
 */
 
 SET NAMES utf8;
@@ -28,6 +28,7 @@ CREATE TABLE `mlsu_category` (
   `status` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
+  `parent_category_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -99,6 +100,26 @@ CREATE TABLE `mlsu_faculty` (
   `created_by_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `program_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `mlsu_menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `mlsu_menu`;
+CREATE TABLE `mlsu_menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `parent_menu_id` int(11) DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `page` varchar(255) DEFAULT NULL,
+  `is_document_page` tinyint(4) DEFAULT NULL,
+  `show_catgory_tool` tinyint(4) DEFAULT NULL,
+  `show_programs` tinyint(4) DEFAULT NULL,
+  `show_faculty` tinyint(4) DEFAULT NULL,
+  `show_course` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
