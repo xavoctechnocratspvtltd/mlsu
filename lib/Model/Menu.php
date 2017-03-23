@@ -31,6 +31,7 @@ class Model_Menu extends \xepan\base\Model_Table{
 
 		$this->addField('page');
 		$this->addField('is_document_page')->type('boolean')->defaultValue(false);
+		$this->hasOne('xepan\mlsu\Category','category_id');
 		$this->addField('show_catgory_tool')->type('boolean')->defaultValue(false);
 		$this->addField('show_programs')->type('boolean')->defaultValue(false);
 		$this->addField('show_faculty')->type('boolean')->defaultValue(false);
