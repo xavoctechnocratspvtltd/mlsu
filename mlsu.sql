@@ -11,7 +11,7 @@
  Target Server Version : 100118
  File Encoding         : utf-8
 
- Date: 03/22/2017 22:56:53 PM
+ Date: 03/23/2017 11:09:20 AM
 */
 
 SET NAMES utf8;
@@ -120,8 +120,9 @@ CREATE TABLE `mlsu_menu` (
   `show_programs` tinyint(4) DEFAULT NULL,
   `show_faculty` tinyint(4) DEFAULT NULL,
   `show_course` tinyint(4) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `mlsu_program`
